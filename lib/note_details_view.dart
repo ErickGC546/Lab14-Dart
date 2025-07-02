@@ -205,10 +205,12 @@ class _NoteDetailsViewState extends State<NoteDetailsView> {
                       ],
                       validator: (value) {
                         if (value?.isEmpty ?? true)
+                          // ignore: curly_braces_in_flow_control_structures
                           return 'Ingresa una calificación';
                         final numValue = double.tryParse(value!);
                         if (numValue == null) return 'Valor inválido';
                         if (numValue < 0 || numValue > 20)
+                          // ignore: curly_braces_in_flow_control_structures
                           return 'Debe ser entre 0 y 20';
                         return null;
                       },
